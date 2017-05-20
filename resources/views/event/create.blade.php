@@ -8,54 +8,56 @@
 </form>
  --}}
 
-<form>
+<form action="{{ url('events/create')}}" method="POST" enctype="">
+{{csrf_field()}}
   <div class="form-group">
     <label for="exampleInputEmail1">Nama Event</label>
-    <input type="text" class="form-control" id="nama_event" placeholder="Nama Event">
+    <input type="text" class="form-control" name="nama_event" placeholder="Nama Event">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Deskripsi_Event</label>
-    <input type="longtext" class="form-control" id="exampleInputEmail1" placeholder="Deskripsi event">
+    <input type="longtext" class="form-control" name="deskripsi_event" placeholder="Deskripsi event">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Lokasi</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Lokasi">
+    <input type="text" class="form-control" name="lokasi" placeholder="Lokasi">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Ulangi</label><br>
-    <input type="radio" name="gender" value="1"> Harian<br>
-    <input type="radio" name="gender" value="2"> Mingguan<br>
-    <input type="radio" name="gender" value="3"> Bulanan<br>
+    <input type="radio" name="repeat" value="1"> Harian<br>
+    <input type="radio" name="repeat" value="2"> Mingguan<br>
+    <input type="radio" name="repeat" value="3"> Bulanan<br>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Waktu Mulai</label>
-    <input type="datetime-local" class="form-control" id="exampleInputPassword1" placeholder="waktu mulai">
+    <input type="datetime-local" class="form-control" name="start" placeholder="waktu mulai">
     <label for="exampleInputPassword1">Waktu Selesai</label>
-    <input type="datetime-local" class="form-control" id="exampleInputPassword1" placeholder="waktu selesai">
+    <input type="datetime-local" class="form-control" name="end" placeholder="waktu selesai">
   </div>
   <div class="form-group">
     <label for="exampleInputFile">Gambar</label>
-    <input type="file" id="exampleInputFile">
+    <input type="file" name="image">
     <p class="help-block">Upload maks 2MB</p>
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Nama Organisasi</label>
-    <input type="text" class="form-control" id="nama_event" placeholder="Nama Event">
+    <input type="text" class="form-control" name="nama_org" placeholder="Nama Event">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Deskripsi Organisasi</label>
-    <input type="text" class="form-control" id="nama_event" placeholder="Nama Event">
+    <input type="text" class="form-control" name="deskripsi_org" placeholder="Deskripsi">
   </div>
     <div class="form-group">
-    <label for="exampleInputEmail1">Ulangi</label><br>
-    <input type="checkbox" name="gender" value="1"> Hiburan<br>
-    <input type="checkbox" name="gender" value="2"> Sosial<br>
-    <input type="checkbox" name="gender" value="3"> Kompetisi<br>
-    <input type="checkbox" name="gender" value="1"> Seminar<br>
-    <input type="checkbox" name="gender" value="2"> Festifal<br>
-    <input type="checkbox" name="gender" value="3"> Lainnya<br>
-  </div>
-  
+    <label for="exampleInputEmail1">kategori</label><br>
+    <input type="checkbox" name="kategori" value="Hiburan"> Hiburan<br>
+    <input type="checkbox" name="kategori" value="Sosial"> Sosial<br>
+    <input type="checkbox" name="kategori" value="Kompetisi"> Kompetisi<br>
+    <input type="checkbox" name="kategori" value="Seminar"> Seminar<br>
+    <input type="checkbox" name="kategori" value="Festifal"> Festifal<br>
+    <input type="checkbox" name="kategori" value="Lainnya"> Lainnya<br>
+    </div>
+
+
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
 

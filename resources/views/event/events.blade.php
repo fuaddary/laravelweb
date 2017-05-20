@@ -24,7 +24,7 @@
                     <!-- Content -->
                     <div class="card-content">
                         <h5>{{$event->nama_event}}</h5>
-                        <p>{{$event->deskripsi_event}}</p>
+                        <p style="word-wrap: break-word;">{{$event->deskripsi_event}}</p>
                     </div>
                     <!-- Footer -->
                     <div class="card-footer">

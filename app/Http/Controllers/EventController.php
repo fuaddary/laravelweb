@@ -15,7 +15,7 @@ class EventController extends Controller
     	$event = array(
  			"image" => $request->image,
             "nama_event" => $request->nama_event,
-    		"deskripsi_event" => $request->nama_event,
+    		"deskripsi_event" => $request->deskripsi_event,
     		"lokasi" => $request->lokasi,
     		"repeat" => $request->repeat,
     		"start" => $request->start,
@@ -24,7 +24,7 @@ class EventController extends Controller
     		"deskripsi_org" => $request->deskripsi_org,
             "kategori" => $request->kategori);
 		if(Event::create($event)){
-			return redirect('event/manage');
+			return redirect('events/manage');
 		}
 		else return "salah";
     }
@@ -38,7 +38,7 @@ class EventController extends Controller
     	$event = array(
     		"image" => $request->image,
     		"nama_event" => $request->nama_event,
-    		"deskripsi_event" => $request->nama_event,
+    		"deskripsi_event" => $request->deskripsi_event,
     		"lokasi" => $request->lokasi,
     		"repeat" => $request->repeat,
     		"start" => $request->start,
@@ -50,7 +50,7 @@ class EventController extends Controller
     		return redirect('event/manage');
     	}
     }
-    public function lihatEvent(Request $request)
+    public function lihatEvent()
     {
         $datas = Event::get();
         return view('event/events',compact('datas'));

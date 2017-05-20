@@ -40,7 +40,7 @@
 @include('layouts.navbar')
 @yield('content')
 
-<footer class="container-fluid text-center">
+<footer class="container-fluid text-center" style="bottom: 0;">
   <p>&copy Cari Event 2017</p>
 </footer>
 </body>
