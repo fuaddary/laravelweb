@@ -22,6 +22,7 @@ class EventController extends Controller
     		"end" => $request->end,
     		"nama_org" => $request->nama_org,
     		"deskripsi_org" => $request->deskripsi_org);
+            "kategori" => $request->kategori);
 		if(Event::create($event)){
 			return redirect('event/manage');
 		}
@@ -44,6 +45,7 @@ class EventController extends Controller
     		"end" => $request->end,
     		"nama_org" => $request->nama_org,
     		"deskripsi_org" => $request->deskripsi_org);
+            "kategori" => $request->kategori);
     	if(Event::where('id','=',$id)->update($event)){
     		return redirect('event/manage');
     	}

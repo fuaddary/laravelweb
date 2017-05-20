@@ -45,7 +45,15 @@
   <div class="form-group">
     <label for="exampleInputEmail1">Deskripsi Organisasi</label>
     <input type="text" class="form-control" id="nama_event" placeholder="Nama Event">
-
+  </div>
+    <div class="form-group">
+    <label for="exampleInputEmail1">Ulangi</label><br>
+    <input type="checkbox" name="gender" value="1"> Hiburan<br>
+    <input type="checkbox" name="gender" value="2"> Sosial<br>
+    <input type="checkbox" name="gender" value="3"> Kompetisi<br>
+    <input type="checkbox" name="gender" value="1"> Seminar<br>
+    <input type="checkbox" name="gender" value="2"> Festifal<br>
+    <input type="checkbox" name="gender" value="3"> Lainnya<br>
   </div>
   
   <button type="submit" class="btn btn-default">Submit</button>

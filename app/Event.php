@@ -20,6 +20,7 @@ class Event extends Model
     	'end',
     	'deskripsi_event',
     	'nama_org',
-    	'deskripsi_org'
+    	'deskripsi_org',
+        'kategori'
     	);
 }
