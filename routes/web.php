@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/events/search', 'EventController@lihatEvent');
 Route::get('/events/create', 'EventController@create');
 Route::get('/events/manage', 'EventController@manage');
+Route::get('/search', 'searchController@index');
