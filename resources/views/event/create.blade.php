@@ -8,7 +8,7 @@
 </form>
  --}}
 
-<form action="{{ url('events/create')}}" method="POST">
+<form action="{{ url('events/create')}}" method="POST" enctype="multipart/form-data">
 {{csrf_field()}}
   <div class="form-group">
     <label for="exampleInputEmail1">Nama Event</label>
@@ -24,9 +24,9 @@
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Ulangi</label><br>
-    <input type="radio" name="repeat" value="Harian"> Harian<br>
-    <input type="radio" name="repeat" value="Mingguan"> Mingguan<br>
-    <input type="radio" name="repeat" value="Bulanan"> Bulanan<br>
+    <input type="radio" name="repeat" value="1"> Harian<br>
+    <input type="radio" name="repeat" value="2"> Mingguan<br>
+    <input type="radio" name="repeat" value="3"> Bulanan<br>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Waktu Mulai</label>

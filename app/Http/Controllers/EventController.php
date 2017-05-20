@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use File;
+
+use Storage;
+
 
 class EventController extends Controller
 {
@@ -11,9 +15,18 @@ class EventController extends Controller
     	return view('event/create');
     }
     public function createEvent(Request $request){
-    	$data = $request->all();
+    	$image= $request->file('image');
+        $destination_path = 'upload/images';
+        $filename=$image->getClientOriginalName();
+        Storage::put('upload/images/'.$filename,file_get_contents($request->file('image')->getRealPath()));
+        /*$images = new image;
+        $images ->image = $filename;
+        $images ->save();*/
+
+
+        $data = $request->all();
     	$event = array(
- 			"image" => $request->image,
+ 			"image" => $filename,
             "nama_event" => $request->nama_event,
     		"deskripsi_event" => $request->deskripsi_event,
     		"lokasi" => $request->lokasi,
@@ -63,4 +76,5 @@ class EventController extends Controller
             return redirect('event/manage');
         }
     }
+
 }
