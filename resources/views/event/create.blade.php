@@ -8,7 +8,9 @@
 </form>
  --}}
 
+
 <form action="{{ url('events/create')}}" method="POST" enctype="multipart/form-data">
+
 {{csrf_field()}}
   <div class="form-group">
     <label for="exampleInputEmail1">Nama Event</label>

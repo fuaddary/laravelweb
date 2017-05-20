@@ -17,8 +17,10 @@ Route::get('/', function () {
 	
 Auth::routes();
 
-Route::get('home', 'HomeController@index')->name('home');
-Route::get('events/search', 'EventController@lihatEvent');
-Route::get('events/create', 'EventController@create');
-Route::get('events/manage', 'EventController@lihatEvent');
-Route::post('events/create', 'EventController@createEvent');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/events/search', 'EventController@lihatEvent');
+Route::get('/events/create', 'EventController@create');
+Route::get('/events/manage', 'EventController@manage');
+Route::get('/search', 'searchController@index');
+
+Route::post('/events/create', 'EventController@createEvent');
