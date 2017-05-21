@@ -24,3 +24,5 @@ Route::get('/events/manage', 'EventController@manage');
 Route::get('/search', 'searchController@index');
 
 Route::post('/events/create', 'EventController@createEvent');
+
+Route::get('download/{filename}', 'EventController@download');

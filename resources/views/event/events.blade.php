@@ -15,7 +15,7 @@
                     <!-- Image wrapper -->
                     <div class="card-up view overlay hm-white-slight">
                         <h5 class="card-label"> <span class="label rgba-black-light">{{$event->kategori}}</span></h5>
-                        <a><img src="https://mdbootstrap.com/images/regular/nature/img%20(48).jpg" class="img-responsive"></a>
+                        <a><img src="{{"download/" .$event->id.'.jpg'}}" class="img-responsive"></a>
                         <div class="mask waves-effect waves-light"> </div>
                     </div>
 
