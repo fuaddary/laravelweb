@@ -17,7 +17,8 @@
         <li><a @yield ('color') href="#">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a @yield ('color') href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a @yield ('color') href="{{ url('/login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a @yield ('color') href="{{ url('/register') }}"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
       </ul>
     </div>
   </div>
