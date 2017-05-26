@@ -14,19 +14,13 @@
 Route::get('/', function () {
     return view('homepage');
 });
-Route::get('/manager', function () {
-    return view('/manager');
-});
-	
+Route::get('/manager', 'EventController@dashboard');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/events/search', 'EventController@lihatEvent');
-Route::get('/events/create', 'EventController@create');
-Route::get('/events/manage', 'EventController@manage');
 Route::get('/search', 'searchController@index');
 
-Route::post('/events/create', 'EventController@createEvent');
+Route::post('/manager/create', 'EventController@createEvent');
 
 Route::get('/download/{filename}', 'EventController@download');
-

@@ -11,8 +11,14 @@ use Storage;
 
 class EventController extends Controller
 {
-    public function create(){
-    	return view('event/create');
+
+
+    public function __constuct(){
+        $this->middleware('auth');
+    }
+
+    public function dashboard(){
+        return view('manager');
     }
     public function createEvent(Request $request){
     	$image= $request->file('image');
@@ -39,6 +45,7 @@ class EventController extends Controller
 
         $event = new Event();
         $event->image = '';
+        $event->user_id = auth()->id();
         $event->nama_event = $request->nama_event;
         $event->deskripsi_event = $request->deskripsi_event;
         $event->lokasi = $request->lokasi;
@@ -53,7 +60,7 @@ class EventController extends Controller
         $event->update($filenameImage);
 
         $image= $request->file('image');
-        $destination_path = 'upload/images';
+        /*$destination_path = 'upload/images';*/
         // $filename=$image->getClientOriginalName();
        /* Storage::put('upload/images/'.$event->id.'.jpg',file_get_contents($request->file('image')->getRealPath()));
 */
