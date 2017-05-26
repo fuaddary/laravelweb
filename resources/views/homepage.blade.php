@@ -18,7 +18,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <div style="height: 700px ; background-image: url('/head.jpg'); background-size: cover; background-attachment: fixed;">
+        <div style="height: 700px ; background-image: url('/img/head.jpg'); background-size: cover; background-attachment: fixed;">
         </div>
         <div class="carousel-caption " style="margin-bottom: 200px; border-width: 3px; border-color: white; border-radius: 21px; border-style: solid;">
           <h3 style="font-size: 40px;">Temukan Eventmu Sekarang</h3>
@@ -40,15 +40,15 @@
   <h2 style="padding: 20px;">KATEGORI</h2><br>
   <div class="row">
     <div class="col-sm-4">
-      <img src="/hiburan.jpg" class="img-responsive" style="width:100%; position: cover; ; height: 200px;" alt="Image">
+      <img src="/img/hiburan.jpg" class="img-responsive" style="width:100%; position: cover; ; height: 200px;" alt="Image">
       <p>Hiburan</p>
     </div>
     <div class="col-sm-4"> 
-      <img src="/seminar.jpg" class="img-responsive" style="width:100%; position: cover; ; height: 200px;" alt="Image">
+      <img src="/img/seminar.jpg" class="img-responsive" style="width:100%; position: cover; ; height: 200px;" alt="Image">
       <p>Seminar</p>    
     </div>
     <div class="col-sm-4"> 
-      <img src="/sosial.jpg" style="width:100%; position: cover; ; height: 200px;" alt="Image">
+      <img src="/img/sosial.jpg" style="width:100%; position: cover; ; height: 200px;" alt="Image">
       <p>Sosial</p>    
     </div>
      <div class="col-sm-4">
@@ -56,11 +56,11 @@
       <p>Kompetisi</p>
     </div>
     <div class="col-sm-4"> 
-      <img src="festival.jpg" class="img-responsive" style="width:100%; position: cover; ; height: 200px;" alt="Image">
+      <img src="/img/festival.jpg" class="img-responsive" style="width:100%; position: cover; ; height: 200px;" alt="Image">
       <p>Festifal</p>    
     </div>
     <div class="col-sm-4"> 
-      <img src="/other.jpg" class="img-responsive" style="width:100%; position: cover; ; height: 200px;" alt="Image">
+      <img src="/img/other.jpg" class="img-responsive" style="width:100%; position: cover; ; height: 200px;" alt="Image">
       <p>Lainnya</p>    
     </div>
 

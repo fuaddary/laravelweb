@@ -26,7 +26,7 @@ class EventController extends Controller
 
     //     $data = $request->all();
     // 	$event = array(
- 			// "image" => '',
+ 	//        "image" => '',
     //         "nama_event" => $request->nama_event,
     // 		"deskripsi_event" => $request->deskripsi_event,
     // 		"lokasi" => $request->lokasi,

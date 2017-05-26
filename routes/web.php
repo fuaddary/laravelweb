@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('homepage');
 });
+Route::get('/manager', function () {
+    return view('/manager');
+});
 	
 Auth::routes();
 
@@ -25,4 +28,5 @@ Route::get('/search', 'searchController@index');
 
 Route::post('/events/create', 'EventController@createEvent');
 
-Route::get('download/{filename}', 'EventController@download');
+Route::get('/download/{filename}', 'EventController@download');
+
