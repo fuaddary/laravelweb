@@ -25,24 +25,7 @@ class EventController extends Controller
     	$image= $request->file('image');
         $destination_path = 'upload/images';
         $filename=$image->getClientOriginalName();
-        Storage::put('upload/images/'.$filename,file_get_contents($request->file('image')->getRealPath()));
-        /*$images = new image;
-        $images ->image = $filename;
-        $images ->save();*/
-
-
-    //     $data = $request->all();
-    // 	$event = array(
- 	//        "image" => '',
-    //         "nama_event" => $request->nama_event,
-    // 		"deskripsi_event" => $request->deskripsi_event,
-    // 		"lokasi" => $request->lokasi,
-    // 		"repeat" => $request->repeat,
-    // 		"start" => $request->start,
-    // 		"end" => $request->end,
-    // 		"nama_org" => $request->nama_org,
-    // 		"deskripsi_org" => $request->deskripsi_org,
-    //         "kategori" => $request->kategori);
+        Storage::put('upload/images/'.$filename,file_get_contents($request->file('image')->getRealPath()))
 
         $event = new Event();
         $event->image = '';
@@ -61,10 +44,6 @@ class EventController extends Controller
         $event->update($filenameImage);
 
         $image= $request->file('image');
-        /*$destination_path = 'upload/images';*/
-        // $filename=$image->getClientOriginalName();
-       /* Storage::put('upload/images/'.$event->id.'.jpg',file_get_contents($request->file('image')->getRealPath()));
-*/
        $request->file('image')->move(public_path("/upload/images"), $event->id.'.jpg');
 		if($event){
 			return redirect('events/manage');
@@ -93,11 +72,11 @@ class EventController extends Controller
     		return redirect('event/manage');
     	}
     }
-    public function lihatEvent()
-    {
-        $datas = Event::get();
-        return view('event/events',compact('datas'));
+
+    public function detail($id){
+        $
     }
+    
 
     public function hapusEvent($id)
     {

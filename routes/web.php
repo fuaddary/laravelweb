@@ -19,7 +19,6 @@ Route::get('/events/manage', 'EventController@dashboard');
 Auth::routes();
 
 Route::get('/home', 'EventController@dashboard');
-Route::get('/events/search', 'EventController@lihatEvent');
 
 
 
@@ -34,3 +33,7 @@ Route::get('/search', 'searchController@index');
 Route::post('/manager/create', 'EventController@createEvent');
 
 Route::get('/download/{filename}', 'EventController@download');
+
+Route::get('/event/detail/{id}', 'EventController@detail' {
+    //
+});

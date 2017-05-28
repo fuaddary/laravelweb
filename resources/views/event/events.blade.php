@@ -46,12 +46,15 @@
                     </div>
 
                     <!-- Button -->
-                    <a class="btn-floating btn-large waves-effect waves-light stylish-color"><i class="fa fa-chevron-right"></i></a>
+                    <a class="btn-floating btn-large waves-effect waves-light stylish-color" href=" {{ url('event/detail/'.$event->id) }}"><i class="fa fa-chevron-right"></i></a>
                     <!-- Content -->
                     <div class="card-content" style="height: 200px;">
                         <h5>{{$event->nama_event}}</h5>
-                        <p style="word-wrap: break-word;">{{$event->deskripsi_event}}</p>
+                        <h4>{{$event->lokasi}}</h4>
                     </div>
+                    
+
+
                     <!-- Footer -->
                     <div class="card-footer">
                         <ul class="list-inline">
