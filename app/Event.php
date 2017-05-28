@@ -13,6 +13,7 @@ class Event extends Model
     public $incrementing = true;
     protected $fillable = array(
     	'image',
+        'user_id',
     	'nama_event',
     	'lokasi',
     	'repeat',
