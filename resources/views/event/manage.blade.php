@@ -4,13 +4,13 @@
         <div class="sidebar-wrapper">
               <ul class="nav">
                   <li>
-                      <a href="dashboard.html">
+                      <a href="{{ url('/events/create') }}">
                           <i class="material-icons">event</i>
                           <p>Create Event</p>
                       </a>
                   </li>
                   <li class="active">
-                      <a href="table.html">
+                      <a href="#">
                           <i class="material-icons">content_paste</i>
                           <p>Manage Event</p>
                       </a>

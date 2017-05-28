@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 @section('head')
 
 <link rel="stylesheet" type="text/css" href="{{asset('dist/css/jquery.datetimepicker.css')}}" >
@@ -8,80 +8,141 @@
 <script type="text/javascript" src="{{asset('dist/js/jquery.datetimepicker.full.min.js')}}" ></script> 
 
 @endsection
+@section('sidebar')
+      </div>
+        <div class="sidebar-wrapper">
+              <ul class="nav">
+                  <li class="active">
+                      <a href="#">
+                          <i class="material-icons">event</i>
+                          <p>Create Event</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="{{ url('/events/manage') }}">
+                          <i class="material-icons">content_paste</i>
+                          <p>Manage Event</p>
+                      </a>
+                  </li>
+              </ul>
+        </div>
+      </div>
+@endsection
 @section('content')
 
-<div class="container">
-  <form action="{{ url('events/create')}}" method="POST" enctype="multipart/form-data">
-
-  {{csrf_field()}}
-    <div class="form-group">
-      <label for="exampleInputEmail1">Nama Event</label>
-      <input type="text" class="form-control" name="nama_event" placeholder="Nama Event">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Deskripsi_Event</label>
-      <input type="longtext" class="form-control" name="deskripsi_event" placeholder="Deskripsi event">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Lokasi</label>
-      <input type="text" class="form-control" name="lokasi" placeholder="Lokasi">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Ulangi</label><br>
-      <input type="radio" name="repeat" value="1"> Harian<br>
-      <input type="radio" name="repeat" value="2"> Mingguan<br>
-      <input type="radio" name="repeat" value="3"> Bulanan<br>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Waktu Mulai</label>
-      <input type="text" class="datetimepicker" name="start">
-      <label for="exampleInputPassword1">Waktu Selesai</label>
-      <input type="text" class="datetimepicker" name="end">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputFile">Gambar</label>
-      <input type="file" name="image">
-      <p class="help-block">Upload maks 2MB</p>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Nama Organisasi</label>
-      <input type="text" class="form-control" name="nama_org" placeholder="Nama Event">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Deskripsi Organisasi</label>
-      <input type="text" class="form-control" name="deskripsi_org" placeholder="Deskripsi">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">kategori</label><br>
-      <input type="checkbox" name="kategori" value="Hiburan"> Hiburan<br>
-      <input type="checkbox" name="kategori" value="Sosial"> Sosial<br>
-      <input type="checkbox" name="kategori" value="Kompetisi"> Kompetisi<br>
-      <input type="checkbox" name="kategori" value="Seminar"> Seminar<br>
-      <input type="checkbox" name="kategori" value="Festifal"> Festifal<br>
-      <input type="checkbox" name="kategori" value="Lainnya"> Lainnya<br>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
-</div>
-
-<form action="#" method="post">
-                <div class="form-group">
-                  <input type="email" class="form-control" name="emailto" placeholder="Email to:">
+<div class="content" >
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header" data-background-color="blue">
+            <h4 class="title">Create Event</h4>
+          </div>
+          <div class="card-content">
+            <form action="{{ url('manager/create')}}" method="POST" enctype="multipart/form-data">
+              {{csrf_field()}}
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group label-floating">
+                    <label class="control-label">Nama Event</label>
+                    <input type="text" class="form-control" name="nama_event" >
+                  </div>
                 </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject">
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Deskripsi Event</label>
+                    <div class="form-group label-floating">
+                      <textarea class="form-control" rows="5" name="deskripsi_event"></textarea>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <textarea class="textarea" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group label-floating">
+                    <label class="control-label">Lokasi</label>
+                    <input type="text" class="form-control" name="lokasi">
+                  </div>
                 </div>
-              </form>
+              </div>
 
-<script>
-  $(".datetimepicker").datetimepicker();
-</script>
+              <div class="row">
+              <div class="col-md-6">
+                  <label for="exampleInputEmail1">Ulangi</label><br>
+                  <input type="radio" name="repeat" value="1"> Harian<br>
+                  <input type="radio" name="repeat" value="2"> Mingguan<br>
+                  <input type="radio" name="repeat" value="3"> Bulanan<br>
+                </div>
+              </div>
 
-<script src="{{asset('bower_components/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}">
-</script>
-<link rel="stylesheet" href="{{asset('bower_components/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group label-floating">
+                    <label class="control-label">Waktu mulai</label>
+                    <input type="text" class="datetimepicker" name="start" style="width: 100%;">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group label-floating">
+                    <label class="control-label">Waktu Selesai</label>
+                    <input type="text" class="datetimepicker" name="end" style="width: 100%;">
+                  </div>
+                </div>
+              </div>
 
-@endsection
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="exampleInputFile">Gambar</label>
+                  <input class="btn btn-primary" type="file" name="image" data-background-color="blue">
+                  <p class="help-block">Upload maks 2MB</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group label-floating">
+                    <label class="control-label">Nama Organisasi</label>
+                    <input type="text" class="form-control" name="nama_org">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Deskripsi Organisasi</label>
+                    <div class="form-group label-floating">
+                      <textarea class="form-control" rows="5" name="deskripsi_org"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="exampleInputEmail1">kategori</label><br>
+                  <input type="checkbox" name="kategori" value="Hiburan"> Hiburan<br>
+                  <input type="checkbox" name="kategori" value="Sosial"> Sosial<br>
+                  <input type="checkbox" name="kategori" value="Kompetisi"> Kompetisi<br>
+                  <input type="checkbox" name="kategori" value="Seminar"> Seminar<br>
+                  <input type="checkbox" name="kategori" value="Festifal"> Festifal<br>
+                  <input type="checkbox" name="kategori" value="Lainnya"> Lainnya<br>
+                </div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary pull-right" data-background-color="blue">Create</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  <script>
+    $(".datetimepicker").datetimepicker();
+  </script>
+  @endsection

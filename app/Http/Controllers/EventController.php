@@ -18,7 +18,8 @@ class EventController extends Controller
     }
 
     public function dashboard(){
-        return view('manager');
+        $data['events']=Event::all();
+        return view('event.manage',$data);
     }
     public function createEvent(Request $request){
     	$image= $request->file('image');
