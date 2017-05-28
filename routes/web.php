@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('/events/manage', 'EventController@dashboard');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'EventController@dashboard');
 Route::get('/events/search', 'EventController@lihatEvent');
 
 
