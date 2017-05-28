@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use App\User;
 use File;
+use Auth;
 
 use Storage;
 
@@ -18,7 +20,8 @@ class EventController extends Controller
     }
 
     public function dashboard(){
-        $data['events']=Event::all();
+        $user = new User();
+        $data['events']=Event::where('user_id','=',Auth::user()->id)->get();
         return view('event.manage',$data);
     }
     public function createEvent(Request $request){
@@ -52,7 +55,7 @@ class EventController extends Controller
     }
     public function update($id)
     {
-    	$data = Evet::find($id);
+    	$data = Event::find($id);
     	return view('event/update', compact('data'));
     }
     public function updateEvent(Request $request, $id){
@@ -74,7 +77,8 @@ class EventController extends Controller
     }
 
     public function detail($id){
-        return view('event.detail');
+        $data['events']= Event::where('id','=',$id)->get();    
+        return view('event.detail',$data);
     }
     
 
