@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('homepage');
 });
-	
+
 Route::get('/events/manage', 'EventController@dashboard');
 Auth::routes();
 
