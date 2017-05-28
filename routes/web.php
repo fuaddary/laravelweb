@@ -34,6 +34,4 @@ Route::post('/manager/create', 'EventController@createEvent');
 
 Route::get('/download/{filename}', 'EventController@download');
 
-Route::get('/event/detail/{id}', 'EventController@detail' {
-    //
-});
+Route::get('/event/detail/{id}', 'EventController@detail');

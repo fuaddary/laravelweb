@@ -25,7 +25,7 @@ class EventController extends Controller
     	$image= $request->file('image');
         $destination_path = 'upload/images';
         $filename=$image->getClientOriginalName();
-        Storage::put('upload/images/'.$filename,file_get_contents($request->file('image')->getRealPath()))
+        Storage::put('upload/images/'.$filename,file_get_contents($request->file('image')->getRealPath()));
 
         $event = new Event();
         $event->image = '';
@@ -74,7 +74,7 @@ class EventController extends Controller
     }
 
     public function detail($id){
-        $
+        return view('event.detail');
     }
     
 
