@@ -8,6 +8,26 @@
 <script type="text/javascript" src="{{asset('dist/js/jquery.datetimepicker.full.min.js')}}" ></script> 
 
 @endsection
+@section('sidebar')
+      </div>
+        <div class="sidebar-wrapper">
+              <ul class="nav">
+                  <li class="active">
+                      <a href="dashboard.html">
+                          <i class="material-icons">event</i>
+                          <p>Create Event</p>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="table.html">
+                          <i class="material-icons">content_paste</i>
+                          <p>Manage Event</p>
+                      </a>
+                  </li>
+              </ul>
+        </div>
+      </div>
+@endsection
 @section('content')
 
 <div class="content" >

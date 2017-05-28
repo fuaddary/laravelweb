@@ -16,7 +16,7 @@
 
     <!--  Material Dashboard CSS    -->
     <link href="{{asset('/material/assets/css/material-dashboard.css')}}" rel="stylesheet"/>
-    
+
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
@@ -32,26 +32,7 @@
         <a href="http://www.creative-tim.com" class="simple-text">
           Cari Events
         </a>
-      </div>
-
-        <div class="sidebar-wrapper">
-              <ul class="nav">
-                  <li class="active">
-                      <a href="dashboard.html">
-                          <i class="material-icons">event</i>
-                          <p>Create Event</p>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="table.html">
-                          <i class="material-icons">content_paste</i>
-                          <p>Manage Event</p>
-                      </a>
-                  </li>
-              </ul>
-        </div>
-      </div>
-
+      @yield('sidebar');
       <div class="main-panel">
       <nav class="navbar navbar-transparent navbar-absolute">
         <div class="container-fluid">

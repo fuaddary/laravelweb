@@ -52,7 +52,7 @@
       <p>Sosial</p>    
     </div>
      <div class="col-sm-4">
-      <img src="/competition.jpg" class="img-responsive" style="width:100%; position: cover; ; height: 200px;" alt="Image">
+      <img src="/img/competition.jpg" class="img-responsive" style="width:100%; position: cover; ; height: 200px;" alt="Image">
       <p>Kompetisi</p>
     </div>
     <div class="col-sm-4"> 
