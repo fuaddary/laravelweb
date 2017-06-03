@@ -25,11 +25,11 @@ class EventController extends Controller
         return view('event.manage',$data);
     }
     public function createEvent(Request $request){
-    	$image= $request->file('image');
+    	/*$image= $request->file('image');
         $destination_path = 'upload/images';
-        $filename=$image->getClientOriginalName();
-        Storage::put('upload/images/'.$filename,file_get_contents($request->file('image')->getRealPath()));
-
+        $filename=$image->getClientOriginalName();*/
+       /* Storage::put('upload/images/'.$filename,file_get_contents($request->file('image')->getRealPath()));
+*/
         $event = new Event();
         $event->image = '';
         $event->user_id = auth()->id();
@@ -53,10 +53,10 @@ class EventController extends Controller
 		}
 		else return "salah";
     }
-    public function update($id)
+    public function edit($id)
     {
     	$data = Event::find($id);
-    	return view('event/update', compact('data'));
+    	return view('event.edit', compact('data'));
     }
     public function updateEvent(Request $request, $id){
     	$data = $request->all();
@@ -82,11 +82,11 @@ class EventController extends Controller
     }
     
 
-    public function hapusEvent($id)
+    public function hapus($id)
     {
         if(Event::where('id','=', $id)->delete())
         {
-            return redirect('event/manage');
+            return redirect('/home');
         }
     }
 

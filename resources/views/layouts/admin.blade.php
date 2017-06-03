@@ -29,7 +29,7 @@
 
       <div class="sidebar" data-color="blue" data-image="{{ asset('/material/assets/img/sidebar-1.jpg') }}">
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text">
+        <a href="{{ url('/') }}" class="simple-text">
           Cari Events
         </a>
       @yield('sidebar');
@@ -45,7 +45,12 @@
             </button>
           </div>
           <div class="collapse navbar-collapse">
+            
             <ul class="nav navbar-nav navbar-right">
+            @if(Auth::guest())
+              <li><a href="{{ url('login') }}">Login</a></li>
+              <li><a href="{{ url('register') }}">Register</a></li>
+            @else
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="material-icons">person</i>
@@ -66,7 +71,9 @@
                                     </li>
                 </ul>
               </li>
+            @endif
             </ul>
+            
           </div>
         </div>
       </nav>

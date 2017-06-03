@@ -12,4 +12,8 @@ class searchController extends Controller
     	$data['events'] = Event::where('nama_event','like','%'.$request->search.'%')->get();
     	return view('event.events',$data);
     }
+        public function kategori($kategori){
+    	$data['events'] = Event::where('kategori','like',$kategori)->get();
+    	return view('event.events',$data);
+    }
 }

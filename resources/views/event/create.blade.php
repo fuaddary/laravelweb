@@ -19,7 +19,7 @@
                       </a>
                   </li>
                   <li>
-                      <a href="{{ url('/events/manage') }}">
+                      <a href="{{ url('/home') }}">
                           <i class="material-icons">content_paste</i>
                           <p>Manage Event</p>
                       </a>

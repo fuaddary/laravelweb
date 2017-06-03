@@ -4,7 +4,7 @@
         <div class="sidebar-wrapper">
               <ul class="nav">
                   <li>
-                      <a href="{{ url('/events/create') }}">
+                      <a href="{{ url('/manager/create') }}">
                           <i class="material-icons">event</i>
                           <p>Create Event</p>
                       </a>
@@ -31,26 +31,8 @@
 								<div class="card-header" data-background-color="blue">
 									<div class="nav-tabs-navigation">
 										<div class="nav-tabs-wrapper">
-											<span class="nav-tabs-title">Tasks:</span>
+											<span class="nav-tabs-title">Events:</span>
 											<ul class="nav nav-tabs" data-tabs="tabs">
-												<li class="active">
-													<a href="#profile" data-toggle="tab">
-														<i class="material-icons">bug_report</i>
-														Bugs
-													<div class="ripple-container"></div></a>
-												</li>
-												<li class="">
-													<a href="#messages" data-toggle="tab">
-														<i class="material-icons">code</i>
-														Website
-													<div class="ripple-container"></div></a>
-												</li>
-												<li class="">
-													<a href="#settings" data-toggle="tab">
-														<i class="material-icons">cloud</i>
-														Server
-													<div class="ripple-container"></div></a>
-												</li>
 											</ul>
 										</div>
 									</div>
@@ -72,12 +54,12 @@
 														</td>
 														<td>{{$event->nama_event}}</td>
 														<td class="td-actions text-right">
-															<button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-																<i class="material-icons">edit</i>
-															</button>
-															<button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+															<a  rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs" href="{{ url('manager/edit/'.$event->id) }}">
+																<i class="material-icons" >edit</i>
+															</a>
+															<a  rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" href="{{ url('/manager/hapus/'.$event->id) }}">
 																<i class="material-icons">close</i>
-															</button>
+															</a>
 														</td>
 													</tr>
 													@endforeach

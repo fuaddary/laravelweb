@@ -7,18 +7,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+      <a class="navbar-brand" href="{{ url('/') }}">CariEvent</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a @yield ('color') href="#">Home</a></li>
-        <li><a @yield ('color') href="#">About</a></li>
-        <li><a @yield ('color') href="#">Projects</a></li>
-        <li><a @yield ('color') href="#">Contact</a></li>
-      </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a @yield ('color') href="{{ url('/login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li><a @yield ('color') href="{{ url('/register') }}"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+        <li><a @yield ('color') href="{{ url('/login') }}"><span class="glyphicon glyphicon-pencil"></span> Create Event</a></li>
       </ul>
     </div>
   </div>

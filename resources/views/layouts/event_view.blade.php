@@ -37,18 +37,12 @@
 <body>
 @include('layouts.navbar')
 <div class="container-fluid">
-  <div>
-  @yield('sidebar')
-  </div>
-        <div class="col-sm-9">
+        <div class="col-sm-12">
           @yield('detail')
         </div>
       </div>
    
 
-<footer class="container-fluid">
-  <p>Footer Text</p>
-</footer>
 
 </body>
 </html>
