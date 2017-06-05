@@ -97,7 +97,22 @@
               <div class="row">
                 <div class="col-md-12">
                   <label for="exampleInputFile">Gambar</label>
-                  <input class="btn btn-primary" type="file" name="image" data-background-color="blue">
+                  <input id="imgInp" class="btn btn-primary" type="file" name="image" data-background-color="blue">
+                  <img id="gambar" src="#" style="width: 50%; height: 50%">
+                  <script >
+                    function readURL(input){
+                      if(input.files && input.files[0]){
+                        var reader = new FileReader();
+                        reader.onload = function(e){
+                          $('#gambar').attr('src', e.target.result);
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                      }
+                    }
+                    $('#imgInp').change(function(){
+                      readURL(this);
+                    });
+                  </script>
                   <p class="help-block">Upload maks 2MB</p>
                 </div>
               </div>

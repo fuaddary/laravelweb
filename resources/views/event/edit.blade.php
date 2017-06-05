@@ -97,7 +97,10 @@
               <div class="row">
                 <div class="col-md-12">
                   <label for="exampleInputFile">Gambar</label>
+                  <br>
+                  <img src="{{ url('/download/'.$data->id.'.jpg') }}" style="height: 50%; width: 50%" >
                   <input class="btn btn-primary" type="file" name="image" data-background-color="blue">
+
                   <p class="help-block">Upload maks 2MB</p>
                 </div>
               </div>

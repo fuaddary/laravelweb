@@ -8,6 +8,7 @@ use App\User;
 use File;
 use Auth;
 
+
 use Storage;
 
 
@@ -46,10 +47,10 @@ class EventController extends Controller
         $filenameImage = array("image"=> $event->id.'.jpg');
         $event->update($filenameImage);
 
-        $image= $request->file('image');
+        /*$image= $request->file('image');*/
        $request->file('image')->move(public_path("/upload/images"), $event->id.'.jpg');
 		if($event){
-			return redirect('events/manage');
+			return redirect('/home');
 		}
 		else return "salah";
     }
@@ -84,8 +85,10 @@ class EventController extends Controller
 
     public function hapus($id)
     {
+        File::delete('upload/images/'.$id.'.jpg');
         if(Event::where('id','=', $id)->delete())
         {
+            
             return redirect('/home');
         }
     }
