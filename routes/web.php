@@ -28,3 +28,4 @@ Route::get('/download/{filename}', 'EventController@download');
 Route::get('/event/detail/{id}', 'EventController@detail');
 Route::get('/manager/edit/{id}', 'EventController@edit');
 Route::get('/manager/hapus/{id}', 'EventController@hapus');
+Route::post('/manager/update/{id}', 'EventController@update');

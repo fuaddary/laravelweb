@@ -41,7 +41,7 @@
             <!-- Image wrapper -->
             <div class="card-up view overlay hm-white-slight" style="height: 200px;">
                 <h5 class="card-label"> <span class="label rgba-black-light">{{$event->kategori}}</span></h5>
-                <a><img src="{{url("/download/" .$event->id.'.jpg')}}" class="img-responsive"></a>
+                <a><img src="{{url("/upload/images/" .$event->id.'.jpg')}}" class="img-responsive"></a>
                 <div class="mask waves-effect waves-light"> </div>
             </div>
 

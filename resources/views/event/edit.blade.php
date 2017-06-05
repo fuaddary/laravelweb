@@ -39,7 +39,7 @@
             <h4 class="title">Create Event</h4>
           </div>
           <div class="card-content">
-            <form action="{{ url('manager/create')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('manager/update/'.$data->id)}}" method="POST" enctype="multipart/form-data">
               {{csrf_field()}}
               <div class="row">
                 <div class="col-md-6">
@@ -98,8 +98,22 @@
                 <div class="col-md-12">
                   <label for="exampleInputFile">Gambar</label>
                   <br>
-                  <img src="{{ url('/download/'.$data->id.'.jpg') }}" style="height: 50%; width: 50%" >
-                  <input class="btn btn-primary" type="file" name="image" data-background-color="blue">
+                  <img id="gambar" src="{{ url('/upload/images/'.$data->id.'.jpg') }}" style="max-width: 200px; hmax-eight: 200px" >
+                  <input id="imgInp" class="btn btn-primary" type="file" name="image" data-background-color="blue">
+                  <script >
+                    function readURL(input){
+                      if(input.files && input.files[0]){
+                        var reader = new FileReader();
+                        reader.onload = function(e){
+                          $('#gambar').attr('src', e.target.result);
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                      }
+                    }
+                    $('#imgInp').change(function(){
+                      readURL(this);
+                    });
+                  </script>
 
                   <p class="help-block">Upload maks 2MB</p>
                 </div>

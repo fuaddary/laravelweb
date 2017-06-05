@@ -59,10 +59,11 @@ class EventController extends Controller
     	$data = Event::find($id);
     	return view('event.edit', compact('data'));
     }
-    public function updateEvent(Request $request, $id){
+    public function update(Request $request, $id){
     	$data = $request->all();
     	$event = array(
-    		"image" => $request->image,
+    		"image" => $id.'.jpg',
+            "user_id" => auth()->id(),
     		"nama_event" => $request->nama_event,
     		"deskripsi_event" => $request->deskripsi_event,
     		"lokasi" => $request->lokasi,
@@ -72,8 +73,14 @@ class EventController extends Controller
     		"nama_org" => $request->nama_org,
     		"deskripsi_org" => $request->deskripsi_org,
             "kategori" => $request->kategori);
+        
+        if ($request->file('image')) {
+            File::delete('upload/images/'.$id.'.jpg');
+            $request->file('image')->move(public_path("/upload/images"), $id.'.jpg');
+        }
+
     	if(Event::where('id','=',$id)->update($event)){
-    		return redirect('event/manage');
+    		return redirect('/home');
     	}
     }
 
@@ -93,8 +100,8 @@ class EventController extends Controller
         }
     }
 
-    public function download($filename) {
-        return response()->download('upload/images/'.$filename);
-    }
+    /*public function download($filename) {
+        return response()->json('upload/images/'.$filename);
+    }*/
 
 }

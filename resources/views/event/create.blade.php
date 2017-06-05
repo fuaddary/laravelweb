@@ -97,8 +97,10 @@
               <div class="row">
                 <div class="col-md-12">
                   <label for="exampleInputFile">Gambar</label>
+                  <br>
+                  <img id="gambar"  style="max-width: 200px; hmax-eight: 200px">
                   <input id="imgInp" class="btn btn-primary" type="file" name="image" data-background-color="blue">
-                  <img id="gambar" src="#" style="width: 50%; height: 50%">
+                  
                   <script >
                     function readURL(input){
                       if(input.files && input.files[0]){

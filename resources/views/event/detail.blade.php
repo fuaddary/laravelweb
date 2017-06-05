@@ -31,7 +31,7 @@
           <hr>
           <h2>{{$event->nama_event}}</h2>
           <div >
-            <img src="{{url("/download/" .$event->id.'.jpg')}}" width="400" height="300" class="img-responsive" style=" display: block ;margin-left: auto; margin-right:auto; ">
+            <img src="{{url("/upload/images/" .$event->id.'.jpg')}}" width="400" height="300" class="img-responsive" style=" display: block ;margin-left: auto; margin-right:auto; ">
           </div>
           <br>
           <p>{{$event->deskripsi_event}}</p>
