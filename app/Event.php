@@ -21,7 +21,10 @@ class Event extends Model
     	'end',
     	'deskripsi_event',
     	'nama_org',
-    	'deskripsi_org',
-        'kategori'
+    	'deskripsi_org'
     	);
+
+    public function kategori_event(){
+        return $this->hasMany('App\Kategori_Event','id')
+    }
 }
