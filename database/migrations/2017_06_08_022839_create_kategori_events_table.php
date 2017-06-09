@@ -18,6 +18,8 @@ class CreateKategoriEventsTable extends Migration
             $table->integer('event_id');
             $table->integer('kategori_id');
             $table->timestamps();
+            $table->foreign('event_id')->references('id')->on('events');
+            $table->foreign('kategori_id')->references('id')->on('kategoris');
         });
     }
 

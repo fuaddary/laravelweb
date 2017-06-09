@@ -25,7 +25,7 @@ class CreateEventsTable extends Migration
             $table->longText('deskripsi_event');
             $table->string('nama_org');
             $table->longText('deskripsi_org');
-            
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
