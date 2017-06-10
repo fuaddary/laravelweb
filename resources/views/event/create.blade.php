@@ -141,12 +141,12 @@
               <div class="row">
                 <div class="col-md-6">
                   <label for="exampleInputEmail1">kategori</label><br>
-                  <input type="checkbox" name="kategori" value="Hiburan"> Hiburan<br>
-                  <input type="checkbox" name="kategori" value="Sosial"> Sosial<br>
-                  <input type="checkbox" name="kategori" value="Kompetisi"> Kompetisi<br>
-                  <input type="checkbox" name="kategori" value="Seminar"> Seminar<br>
-                  <input type="checkbox" name="kategori" value="Festifal"> Festifal<br>
-                  <input type="checkbox" name="kategori" value="Lainnya"> Lainnya<br>
+                  <input type="checkbox" name="kategori" value="1"> Hiburan<br>
+                  <input type="checkbox" name="kategori" value="2"> Sosial<br>
+                  <input type="checkbox" name="kategori" value="3"> Kompetisi<br>
+                  <input type="checkbox" name="kategori" value="4"> Seminar<br>
+                  <input type="checkbox" name="kategori" value="5"> Festifal<br>
+                  <input type="checkbox" name="kategori" value="6"> Lainnya<br>
                 </div>
               </div>
               

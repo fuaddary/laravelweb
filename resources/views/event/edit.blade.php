@@ -141,12 +141,12 @@
               <div class="row">
                 <div class="col-md-6">
                   <label for="exampleInputEmail1">kategori</label><br>
-                  <input type="checkbox" name="kategori" @if($data->kategori=="Hiburan")checked @endif value="Hiburan"> Hiburan<br>
-                  <input type="checkbox" name="kategori" @if($data->kategori=="Sosial")checked @endif value="Sosial"> Sosial<br>
-                  <input type="checkbox" name="kategori" @if($data->kategori=="Kompetisi")checked @endif  value="Kompetisi"> Kompetisi<br>
-                  <input type="checkbox" name="kategori" @if($data->kategori=="Seminar")checked @endif value="Seminar"> Seminar<br>
-                  <input type="checkbox" name="kategori" @if($data->kategori=="Festifal")checked @endif value="Festifal"> Festifal<br>
-                  <input type="checkbox" name="kategori" @if($data->kategori=="Lainnya")checked @endif value="Lainnya"> Lainnya<br>
+                  <input type="checkbox" name="kategori" @if($data->kategori=="1")checked @endif value="1"> Hiburan<br>
+                  <input type="checkbox" name="kategori" @if($data->kategori=="2")checked @endif value="2"> Sosial<br>
+                  <input type="checkbox" name="kategori" @if($data->kategori=="3")checked @endif  value="3"> Kompetisi<br>
+                  <input type="checkbox" name="kategori" @if($data->kategori=="4")checked @endif value="4"> Seminar<br>
+                  <input type="checkbox" name="kategori" @if($data->kategori=="5")checked @endif value="5"> Festifal<br>
+                  <input type="checkbox" name="kategori" @if($data->kategori=="6")checked @endif value="6"> Lainnya<br>
                 </div>
               </div>
               
