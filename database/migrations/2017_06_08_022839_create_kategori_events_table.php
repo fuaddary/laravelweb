@@ -15,9 +15,13 @@ class CreateKategoriEventsTable extends Migration
     {
         Schema::create('kategori_events', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('event_id');
-            $table->integer('kategori_id');
+            $table->integer('event_id')->unsigned();
+            $table->integer('kategori_id')->unsigned();
             $table->timestamps();
+            
+        });
+
+        Schema::table('kategori_events', function(Blueprint $table){
             $table->foreign('event_id')->references('id')->on('events');
             $table->foreign('kategori_id')->references('id')->on('kategoris');
         });
